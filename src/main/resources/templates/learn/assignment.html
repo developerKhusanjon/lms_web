@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="fragments/header :: head"></th:block>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="section">
+
+        <div class="card">
+
+            <th:block th:include="fragments/trainee-menu :: navbar"></th:block>
+
+            <div id="assignmentApp"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div th:replace="~{fragments/footer :: content}"></div>
+
+<th:block th:include="fragments/footer :: vueResources"></th:block>
+
+<script th:src="@{/vendor/state-machine.min.js}"></script>
+<script th:src="@{/vendor/showdown.min.js}"></script>
+
+<script th:src="@{/js/components/loading-status.js}"></script>
+<script th:src="@{/js/components/audio-player.js}"></script>
+<script th:src="@{/js/components/video-player.js}"></script>
+<script th:src="@{/js/components/quiz.js}"></script>
+<script th:src="@{/js/components/assignment.js}"></script>
+<script th:src="@{/js/apps/assignment-app.js}"></script>
+
+</body>
+</html>

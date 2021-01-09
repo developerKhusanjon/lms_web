@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div th:fragment="navbar">
+
+    <div class="card-header traineeNav">
+
+        <h3>Team Torc LMS</h3>
+
+        <ul class="nav nav-pills card-header-pills justify-content-center">
+            <li class="nav-item"><a class="nav-link" th:href="@{/learn/home}"><i class="fas fa-home"></i> Home</a></li>
+            <li class="nav-item"><a th:href="@{/logout}" class="nav-link">Logout</a></li>
+        </ul>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:remove="all">Weekly Progress Report</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    Dear <p th:text="${name}"></p>
+
+    <p>Here is your weekly trainee activity summary:</p>
+
+    <div th:each="user : ${users}">
+        <h3 th:text="${user.firstname} + ' ' +  ${user.surname}"></h3>
+
+        <ul>
+            <li th:each="assignment : ${user.assignedCourses}" th:text="${assignment.assignedCourse.title} + ' : ' + ${assignment.status}"></li>
+        </ul>
+    </div>
+
+    <p>Regards, <br />&emsp; <em>Team Torc</em>
+    </p>
+</body>
+</html>

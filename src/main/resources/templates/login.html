@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: head}"></head>
+<body>
+
+    <div class="container">
+        <div class = "panel panel-login">
+            <div class = "panel-heading">
+                <img th:src="@{/images/torcWhite.jpg}" alt="torc" height="100" width="relative"/>
+                <h2>Team Torc LMS</h2>
+                <hr>
+            </div>
+
+            <div class="panel-body">
+                <form th:action="@{/login}" method="POST" class="form-signin">
+                    <div class="form-group">
+                        <input type="text" id="txtEmail" name="email"  th:placeholder="Email" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password"  th:placeholder="Password" id="txtPassword" name="password" class="form-control" />
+                    </div>
+
+                    <div class = "errorHolder">
+                        <div th:if="${#request.getParameter('error') != null}" class="">Invalid Username or Password</div>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="form-control btn btn-secondary btn-block" name="Submit" type="Submit" >Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div th:replace="~{fragments/footer :: content}"></div>
+</body>
+</html>
